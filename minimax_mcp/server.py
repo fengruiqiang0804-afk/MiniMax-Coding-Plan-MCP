@@ -104,11 +104,8 @@ def web_search(
 @mcp.tool(
     description="""
     
-    You MUST use this tool whenever you need to analyze, describe, or extract information from an image.
-    This includes when:
-    - A user sends or attaches an image and asks about it
-    - A task involves an image that needs to be understood
-      (e.g. UI screenshots, diagrams, error screenshots, design mockups)
+    You MUST use this tool whenever you need to analyze, describe, or extract information from an image,
+    including when you get an image from user input or any task related image.
 
     An LLM-powered vision tool that can analyze and interpret image content from local files or URLs based on your instructions.
     Only JPEG, PNG, and WebP formats are supported. Other formats (e.g. PDF, GIF, PSD, SVG) are not supported.
