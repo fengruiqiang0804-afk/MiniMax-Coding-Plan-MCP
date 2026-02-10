@@ -40,16 +40,18 @@ api_client = MinimaxAPIClient(api_key, api_host)
 @mcp.tool(
     description="""
     
-    Web Search API, works like Google Search.
+    You MUST use this tool whenever you need to search for real-time or external information on the web.
+    
+    A web search API that works just like Google Search.
     
     Args:
-        query (str): The search query string. Use 3-5 keywords. Add the current date for time-sensitive queries, e.g. `latest iPhone 2025`
+        query (str): The search query. Aim for 3-5 keywords for best results. For time-sensitive topics, include the current date (e.g. `latest iPhone 2025`).
         
     Search Strategy:
-        - If no valid results found, try changing search keywords
+        - If no useful results are returned, try rephrasing your query with different keywords.
         
     Returns:
-        Text content with search results in JSON format. The response structure is:
+        A JSON object containing the search results, structured as follows:
         {
             "organic": [
                 {
@@ -102,26 +104,28 @@ def web_search(
 @mcp.tool(
     description="""
     
-    A powerful LLM that can analyze and understand image content from files or URLs, follow your instruction.
-    Use this tool to understand images by LLM.
-    Only support jpeg, png, webp formats. Other formats like pdf/gif/psd/svg and so on are not supported.
+    You MUST use this tool whenever you need to analyze, describe, or extract information from an image,
+    including when you get an image from user input or any task-related image.
+
+    An LLM-powered vision tool that can analyze and interpret image content from local files or URLs based on your instructions.
+    Only JPEG, PNG, and WebP formats are supported. Other formats (e.g. PDF, GIF, PSD, SVG) are not supported.
 
     Args:
-        prompt (str): The text prompt describing what you want to analyze or extract from the image.
-        image_source (str): The source location of the image to analyze.
+        prompt (str): A text prompt describing what you want to analyze or extract from the image.
+        image_source (str): The location of the image to analyze.
             Accepts:
             - HTTP/HTTPS URL: "https://example.com/image.jpg"
             - Local file path:
                 - Relative path: "images/photo.png"
                 - Absolute path: "/Users/username/Documents/image.jpg"
-            IMPORTANT: If the file path starts with @ symbol, you MUST remove the @ prefix before passing to this function.
+            IMPORTANT: If the file path starts with an @ symbol, you MUST strip the @ prefix before passing it to this function.
             For example:
-                - If you see "@Documents/photo.jpg", use "Documents/photo.jpg"
-                - If you see "@/Users/username/image.png", use "/Users/username/image.png"
+                - "@Documents/photo.jpg" → "Documents/photo.jpg"
+                - "@/Users/username/image.png" → "/Users/username/image.png"
             Supported formats: JPEG, PNG, WebP
         
     Returns:
-        Text content with the image analysis result.
+        A text description of the image analysis result.
     """
 )
 def understand_image(

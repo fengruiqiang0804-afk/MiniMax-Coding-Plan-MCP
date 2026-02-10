@@ -2,7 +2,7 @@ import os
 import base64
 import requests
 from minimax_mcp.const import *
-from minimax_mcp.exceptions import MinimaxMcpError, MinimaxRequestError
+from minimax_mcp.exceptions import  MinimaxRequestError
 
 
 
