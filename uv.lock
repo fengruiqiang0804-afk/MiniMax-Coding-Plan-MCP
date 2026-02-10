@@ -558,7 +558,7 @@ wheels = [
 
 [[package]]
 name = "minimax-coding-plan-mcp"
-version = "0.0.3"
+version = "0.0.4"
 source = { editable = "." }
 dependencies = [
     { name = "mcp", extra = ["cli"] },
