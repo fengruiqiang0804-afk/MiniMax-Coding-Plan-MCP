@@ -40,7 +40,7 @@ api_client = MinimaxAPIClient(api_key, api_host)
 @mcp.tool(
     description="""
     
-    You MUST use this tool to perform web searches whenever the task involves looking up information online.
+    You MUST use this tool whenever you need to search for real-time or external information on the web.
     
     A web search API that works just like Google Search.
     
@@ -104,7 +104,7 @@ def web_search(
 @mcp.tool(
     description="""
     
-    You MUST use this tool whenever you receive an image from the user or need to handle any image-related task.
+    You MUST use this tool whenever you need to analyze, describe, or extract information from an image.
 
     An LLM-powered vision tool that can analyze and interpret image content from local files or URLs based on your instructions.
     Only JPEG, PNG, and WebP formats are supported. Other formats (e.g. PDF, GIF, PSD, SVG) are not supported.
