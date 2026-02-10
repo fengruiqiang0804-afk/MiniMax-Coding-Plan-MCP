@@ -102,6 +102,8 @@ def web_search(
 @mcp.tool(
     description="""
     
+    You MUST use this tool to understand image, when you get an image from user or any task related to image.
+
     A powerful LLM that can analyze and understand image content from files or URLs, follow your instruction.
     Use this tool to understand images by LLM.
     Only support jpeg, png, webp formats. Other formats like pdf/gif/psd/svg and so on are not supported.
